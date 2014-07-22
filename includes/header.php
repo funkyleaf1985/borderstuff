@@ -13,7 +13,7 @@
 
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'><!-- font-family: 'Oswald', sans-serif; -->
-
+	
 
 </head>
 
@@ -82,19 +82,6 @@
 					echo $oView->renderNavigation($aGenres);
 
 				 ?>
-
-			<!-- <ul>
-				<li class="nav_button"> <a href="index.html"> HOME &nbsp&nbsp&nbsp|</a> </li>
-				<li class="nav_button"> <a href="product_type.html"> SALES &nbsp&nbsp&nbsp|</a> </li>
-				<li class="nav_button"> <a href="product_type.html"> TOPS &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="product_type.html"> PANTS &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="product_type.html"> HANDBAGS &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="product_type.html"> ACCESSORIES &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="product_type.html"> WALLETS &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="product_type.html"> SHOES &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="contact.html"> CONTACT US &nbsp&nbsp&nbsp|</a></li>
-				<li class="nav_button"> <a href="service.html"> SERVICES </a></li>
-			</ul> -->
 
 		</div> <!-- end of navgation_box -->
 			

@@ -121,6 +121,27 @@ class Collection{
 
     }
 
+    public function getSearchingReasults(){
+
+    	$aProducts = array();
+
+    	$oConnection = new Connection();
+		$sSQL = "SELECT *
+				FROM tbproduct
+				WHERE ProductName LIKE '%".$_POST['search']."%' OR Description LIKE '%".$_POST['search']."%' ";
+
+		$oResult = $oConnection->query($sSQL);
+
+		while($aRow = $oConnection->fetch_array($oResult)){
+			$oProduct = new Product();
+			$oProduct->load($aRow["ProductID"]);
+			$aProducts[] = $oProduct;
+		}
+
+		$oConnection->close_connection();
+
+    	return $aProducts;
+    }
 
 }
 

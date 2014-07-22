@@ -9,15 +9,11 @@ require_once("includes/view.php");
 
 session_start();
 
-$oCart = $_SESSION["Cart"];
-
-if(isset($_SESSION["CustomerID"]) == false){
-           header("Location:login.php");
-}
-
 $oView = new View();
 $oCollection = new Collection();
 $aGenres = $oCollection->getAllGenres();
+
+$aSearchingResults = $oCollection->getSearchingReasults();
 
 require_once ("includes/header.php");
 ?>
@@ -45,36 +41,16 @@ require_once ("includes/header.php");
 
 								    <!-- should rewrite in view -->
 
-								    <?php echo $oView->renderSeachingResults($oCart); ?>
+								    <?php 
 
-								   <!--  <tr>	
-									  <th class="th_searching_result_one">
-									  	<div class="searching_result_image"> <a href="product.php"><img src="assest/images/product/product_show/infinity_tee.jpg" alt=""></a> </div>
-									  	<div class="searching_results_productname"> <span>ProductName</span> </div>
-									  	<div class="searching_results_add_to_cart_button"> <a href="add_to_cart.php">ADD TO CART</a> </div>
-									  	<div class="clear"></div>
-									  </th>
-
-								      <th class="th_searching_result_two">
-								      	<div  class="searching_result_product_details">
-								      	 <span class="searching_result_product_details_title"> ITEM DESCRIPTION: </span> 
-								      	 <span class="searching_result_product_details_contents"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, tempore reprehenderit at consequuntur enim nesciunt quibusdam cupiditate. Impedit, odit, alias, minus accusamus distinctio</br> corrupti quae sapiente cupiditate dolorum eius voluptates.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, tempore reprehenderit at</br> consequuntur enim nesciunt quibusdam cupiditate. Impedit, odit, alias, minus corrupti quae sapiente cupiditate dolorum eius voluptates. </span>
-								      	<div class="clear"></div> 
-
-								      	</div>
-								      	<div  class="searching_result_product_details">
-								      	 <span class="searching_result_product_details_title"> ITEM PRICE :  </span>  
-								      	 <span class="searching_result_product_details_contents">$199.99</span>
-								      	<div class="clear"></div> 
-
-								      	 </div>
-								      	<div class="clear"></div>
-								      </th>
-								    
-								      	<div class="clear"></div>
-								      </th>
-
-								    </tr> -->
+								    	if(count($aSearchingResults) != 0){
+								    		echo $oView->renderSeachingResults($aSearchingResults);
+								    	}else{
+								    		header("Location:searching_results_fail.php");
+								    	}
+								    	
+								   		
+									?>
 
 								    <!-- should rewrite in view  up-->
 

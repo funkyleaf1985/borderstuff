@@ -24,7 +24,7 @@ require_once ("includes/header.php");
 
 			<div class="shopping_cart_main">
 				
-				<div class="product_type_main_h"> <span>NO RESULTS HAS BEEN FOUND IN YOUR SEARCHING</span> </div>
+				<div class="product_type_main_h"> <span>NO RESULTS FOUND</span> </div>
 
 
 				<div class="shopping_cart_box">

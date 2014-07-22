@@ -415,7 +415,7 @@ background-color: #10b7bd;width: 150px;height: auto;line-height: 20px;text-align
 
 .searching_result_product_details_title{width: auto;height: auto;/*outline: 1px black solid;*/text-align: left;float: left;margin-bottom: 10px;font-size: 18px;color:#4ccfc1; }
 
-.searching_result_product_details_contents{width: 480px;height: auto;/*outline: 1px red solid;*/text-align: left;float: left;margin-top: 20px;margin-bottom: 30px;font-size: 16px;font-weight: none;line-height: 120%;}
+.searching_result_product_details_contents{width: 480px;height: auto;/*outline: 1px red solid;*/text-align: left;float: left;margin-top: 20px;margin-bottom: 30px;font-size: 16px;font-weight: none;line-height: 140%;}
 
 .searching_fail_content{width: }
 

@@ -10,8 +10,6 @@ require_once("includes/view.php");
 
 session_start();
 
-
-
 $oView = new View();
 $oCollection = new Collection();
 $aGenres = $oCollection->getAllGenres();

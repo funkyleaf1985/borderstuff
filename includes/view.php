@@ -277,49 +277,43 @@ class View{
 	}
 
 
-	public function renderSeachingResults($oCart){
+	public function renderSeachingResults($aResults){
 
 		$sHTML = "";
-  
-        $aShoppingCartProducts = $oCart->Contents;
 
-        foreach ($aShoppingCartProducts as $ProductID => $Quantity) {
-        $oProduct = new Product();
-        $oProduct->load($ProductID);
+		for($iCount=0; $iCount<count($aResults);$iCount++){
 
-        $sHTML .= '<tr>';
-		$sHTML .= '<th style="vertical-align:top" class="th_searching_result_one">';
-		$sHTML .= '<div class="searching_result_image_itembox">';
-		$sHTML .= '<div class="searching_result_image"> <a href="product.php?productid='.$oProduct->ProductID.'"> <img src="assest/images/product/product_show/'.$oProduct->PhotoPath.'.jpg" alt=""></a></div>';
-		$sHTML .= '<div class="searching_results_productname"> <span>'.$oProduct->ProductName.'</span> </div>';
-		$sHTML .= '<div class="searching_results_add_to_cart_button"> <a href="add_to_cart.php?productID='.$oProduct->ProductID.'">ADD TO CART</a> </div>';
-		$sHTML .= '<div class="clear"></div>';
-		$sHTML .= '</div>';
-		$sHTML .= '</th>';
-		$sHTML .= '<th style="vertical-align:top" class="th_searching_result_two">';
-		$sHTML .= '<div class="searching_result_image_detailsbox">';
-		$sHTML .= '<div class="searching_result_product_details">';
-		$sHTML .= '<span class="searching_result_product_details_title"> ITEM DESCRIPTION: </span> ';
-		$sHTML .= '<span class="searching_result_product_details_contents">'.$oProduct->Description.'</span>';
-		$sHTML .= '<div class="clear"></div> ';
-		$sHTML .= '</div>';
-		$sHTML .= '<div class="searching_result_product_details">';
-		$sHTML .= '<span class="searching_result_product_details_title"> ITEM PRICE :  </span> '; 
-		$sHTML .= '<span class="searching_result_product_details_contents"><span>$ '.$oProduct->Price.'</span>';
-		$sHTML .= '<div class="clear"></div> ';
-		$sHTML .= '</div>';
-		$sHTML .= '<div class="clear"></div>';
-		$sHTML .= '</div>';
-		$sHTML .= '</th>';
-		$sHTML .= '</tr>';
-        
-         } 
+			$oProduct = $aResults[$iCount];
+			
+			$sHTML .= '<tr>';
+			$sHTML .= '<th style="vertical-align:top" class="th_searching_result_one">';
+			$sHTML .= '<div class="searching_result_image_itembox">';
+			$sHTML .= '<div class="searching_result_image"> <a href="product.php?productid='.$oProduct->ProductID.'"> <img src="assest/images/product/product_show/'.$oProduct->PhotoPath.'.jpg" alt=""></a></div>';
+			$sHTML .= '<div class="searching_results_productname"> <span>'.$oProduct->ProductName.'</span> </div>';
+			$sHTML .= '<div class="searching_results_add_to_cart_button"> <a href="add_to_cart.php?productID='.$oProduct->ProductID.'">ADD TO CART</a> </div>';
+			$sHTML .= '<div class="clear"></div>';
+			$sHTML .= '</div>';
+			$sHTML .= '</th>';
+			$sHTML .= '<th style="vertical-align:top" class="th_searching_result_two">';
+			$sHTML .= '<div class="searching_result_image_detailsbox">';
+			$sHTML .= '<div class="searching_result_product_details">';
+			$sHTML .= '<span class="searching_result_product_details_title"> ITEM DESCRIPTION: </span> ';
+			$sHTML .= '<span class="searching_result_product_details_contents">'.$oProduct->Description.'</span>';
+			$sHTML .= '<div class="clear"></div> ';
+			$sHTML .= '</div>';
+			$sHTML .= '<div class="searching_result_product_details">';
+			$sHTML .= '<span class="searching_result_product_details_title"> ITEM PRICE :  </span> '; 
+			$sHTML .= '<span class="searching_result_product_details_contents"><span>$ '.$oProduct->Price.'</span>';
+			$sHTML .= '<div class="clear"></div> ';
+			$sHTML .= '</div>';
+			$sHTML .= '<div class="clear"></div>';
+			$sHTML .= '</div>';
+			$sHTML .= '</th>';
+			$sHTML .= '</tr>';
+		}
 
         return $sHTML;
 	}
-
-
-
 
 }
  ?>
